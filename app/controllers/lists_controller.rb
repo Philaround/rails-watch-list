@@ -3,14 +3,6 @@ class ListsController < ApplicationController
     @lists = List.all
   end
 
-  def show
-    @list = List.find(params[:id])
-  end
-
-  def new
-    @list = List.new
-  end
-
   def create
     @list = List.new((list_params))
     if @list.save
@@ -18,6 +10,14 @@ class ListsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def new
+    @list = List.new
+  end
+
+  def show
+    @list = List.find(params[:id])
   end
 
   private
