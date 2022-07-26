@@ -5,22 +5,22 @@ class ListsController < ApplicationController
     @lists = List.all
   end
 
-  def create
-    @list = List.new((list_params))
-    if @list.save
-      redirect_to list_path(@list)
-    else
-      render 'new'
-    end
+  def show
+    @bookmark = Bookmark.new
+    @review = Review.new(list: @list)
   end
 
   def new
     @list = List.new
   end
 
-  def show
-    @bookmark = Bookmark.new
-    @review = Review.new(list: @list)
+  def create
+    @list = List.new(list_params)
+    if @list.save
+      redirect_to list_path(@list)
+    else
+      render 'new'
+    end
   end
 
   def destroy
@@ -35,6 +35,6 @@ class ListsController < ApplicationController
   end
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :photo)
   end
 end
