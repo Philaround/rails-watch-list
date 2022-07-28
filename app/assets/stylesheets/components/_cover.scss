@@ -1,6 +1,6 @@
 .cover {
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(asset_path('cover.jpg'));
-  height: 150px;
+  height: 500px;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -9,4 +9,9 @@
 
 .typed-js {
   min-height: 33.6px;
+}
+
+.text-center {
+  position: absolute;
+  top: 220px;
 }

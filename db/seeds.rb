@@ -21,3 +21,8 @@ url = 'http://tmdb.lewagon.com/movie/top_rated'
   end
 end
 puts 'Movies created'
+
+
+file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
+list = List.new(title: 'NES', body: "A great console")
+list.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
